@@ -2,11 +2,10 @@
  * 为css中的所有url路径加上hash值，具体的拼接方法可以自己定义
  */
 
-var fs = require('fs')
-var path = require('path')
-var crypto = require('crypto')
-var through = require('through2')
-var URI = require('urijs')
+var fs = require('fs');
+var path = require('path');
+var crypto = require('crypto');
+var through = require('through2');
 
 module.exports = function (options) {
 	options = options || {
@@ -19,7 +18,7 @@ module.exports = function (options) {
 			 */
 			return fileName + '?_=' + hash;
 		}
-	}
+	};
 
 	/*
 	 * 匹配所有带有指定文件后缀名的的url(xxx)
@@ -27,16 +26,16 @@ module.exports = function (options) {
 	var reg = /(url\(['"]?)([^\)\"\']+?\.(?:png|jpg|gif|svg))([^\)\"\']*?)(['"]?\))/igm;
 
 	return through.obj(function (file, enc, callback) {
-		var filepath = file.path
-		var cssdir = path.dirname(file.path)
+		var filepath = file.path;
+		var cssdir = path.dirname(file.path);
 
 		if (file.isNull()) {
-			this.push(file)
-			return callback()
+			this.push(file);
+			return callback();
 		}
 		if (file.isStream()) {
-			console.error('Streams are not supported!')
-			return callback()
+			console.error('Streams are not supported!');
+			return callback();
 		}
 
 		var contents = file.contents.toString().replace(reg, function (content, left, imgurl, query, right) {
@@ -48,14 +47,14 @@ module.exports = function (options) {
 			 * query:   ?123
 			 * right:   ")
 			 */
-			var hashedImgUrl = customHashedUrl(cssdir, imgurl, filepath, options.customHash)
-			return left + hashedImgUrl + right
+			var hashedImgUrl = customHashedUrl(cssdir, imgurl, filepath, options.customHash);
+			return left + hashedImgUrl + right;
 		})
 
-		file.contents = new Buffer(contents)
+		file.contents = new Buffer(contents);
 
-		this.push(file)
-		return callback()
+		this.push(file);
+		return callback();
 	})
 }
 
