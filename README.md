@@ -21,7 +21,7 @@ npm install gulp-css-url-custom-hash
 
 `customHash`
 
-url路径的文件名与该文件hash值的拼接
+url路径的文件名与该文件hash值的拼接函数
 
 ## Example
 

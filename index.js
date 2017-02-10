@@ -1,7 +1,3 @@
-/*
- * 为css中的所有url路径加上hash值，具体的拼接方法可以自己定义
- */
-
 var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
