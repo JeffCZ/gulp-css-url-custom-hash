@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "为css中的url路径加上hash值，拼接方式可自定义",
   "main": "index.js",
+	"keywords":["gulp","css","hash"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
