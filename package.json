@@ -1,22 +1,22 @@
 {
   "name": "gulp-css-url-custom-hash",
   "version": "1.0.0",
-  "description": "Adds hash strings to asset paths in CSS",
+  "description": "为css中的url路径加上hash值，拼接方式可自定义",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JeffCZ/gulp-css-url-custom-hash.git"
+    "url": "git+https://github.com/zzefff/gulp-css-url-custom-hash.git"
   },
-  "keywords": [
-    "gulp",
-    "css",
-    "hash"
-  ],
-  "author": "JeffCZ",
+  "author": "zzefff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzefff/gulp-css-url-custom-hash/issues"
+  },
+  "homepage": "https://github.com/zzefff/gulp-css-url-custom-hash#readme",
   "dependencies": {
-    "through2": "^2.0.1",
-  },
+    "through2": "^2.0.3"
+  }
 }
