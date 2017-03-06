@@ -1,6 +1,6 @@
 {
   "name": "gulp-css-url-custom-hash",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "为css中url路径加上基于该文件md5的hash值，具体的拼接方法可以自己定义。",
   "main": "index.js",
   "keywords": [
