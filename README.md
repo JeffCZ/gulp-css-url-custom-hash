@@ -59,7 +59,7 @@ gulp.task('default', function () {
  * }
  * after:
  * .test{
- *     background-image: url(111.png?_=ec000625);
+ *     background-image: url(111.png?_=a6a2sgq0);
  * }
  * .test2{
  *     background-image: url(222.jpg);
