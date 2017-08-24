@@ -2,7 +2,7 @@
 
 ## Feature
 
-为css中url路径加上基于该文件md5的hash值，具体的拼接方法可以自己定义。
+获取css文件中的资源文件md5并拼接到文件名上，具体拼接方式可以自定义。
 
 只会匹配绝对地址路径。
 
@@ -23,11 +23,11 @@ npm install gulp-css-url-custom-hash
 
 `customHash`
 
-css文件中url路径的文件名与该文件hash值的拼接函数
+一个用来处理css文件中的资源文件md5值与该文件文件名的拼接的函数
 
 `targetFileType`
 
-需要获取md5值得文件类型，默认为 ['png', 'jpg', 'jpeg', 'gif', 'svg']
+需要处理的文件类型后缀名，默认为 ['png', 'jpg', 'jpeg', 'gif', 'svg']
 
 ## Example
 
@@ -38,10 +38,10 @@ var hash = require('gulp-css-url-custom-hash');
 gulp.task('default', function () {
     return gulp.src('a.css')
         .pipe(urlCustomHash({
-            customHash: function(fileName, hash){
+            customHash: function(fileName, hash){ // 自定义的文件名拼接函数
                 return fileName + '?_=' + hash.slice(0, 8);
             },
-            targetFileType: ['png']
+            targetFileType: ['png'] //只处理png文件
         }))
         .pipe(gulp.dest('dist'));
 });
